@@ -109,13 +109,6 @@ cd backend
 npm install
 ```
 
-Create `.env` file in backend folder:
-```env
-PORT=5001
-MONGODB_URI=mongodb://localhost:27017/notes-app
-JWT_SECRET=your-super-secret-jwt-key-here
-```
-
 Seed database with test data:
 ```bash
 node scripts/seedData.js

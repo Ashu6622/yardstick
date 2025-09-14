@@ -11,7 +11,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     if (token) {
       // Verify token is still valid
       fetch(`${API_URL}/notes`, {
@@ -21,16 +21,16 @@ function App() {
       })
       .then(response => {
         if (response.ok) {
-          const userData = JSON.parse(localStorage.getItem('user'));
+          const userData = JSON.parse(sessionStorage.getItem('user'));
           setUser(userData);
         } else {
-          localStorage.removeItem('token');
-          localStorage.removeItem('user');
+          sessionStorage.removeItem('token');
+          sessionStorage.removeItem('user');
         }
       })
       .catch(() => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
+        sessionStorage.removeItem('token');
+        sessionStorage.removeItem('user');
       })
       .finally(() => {
         setLoading(false);
@@ -45,8 +45,8 @@ function App() {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('user');
     setUser(null);
   };
 

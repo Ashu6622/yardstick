@@ -5,8 +5,7 @@ import NoteCard from './NoteCard';
 import NoteModal from './NoteModal';
 import ConfirmModal from './ConfirmModal';
 
-// const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
-const API_URL = 'http://localhost:5001/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
 
 function Dashboard({ user, onLogout }) {
   const [notes, setNotes] = useState([]);
@@ -19,7 +18,7 @@ function Dashboard({ user, onLogout }) {
   const [showConfirm, setShowConfirm] = useState(false);
   const [deleteNoteId, setDeleteNoteId] = useState(null);
 
-  const token = localStorage.getItem('token');
+  const token = sessionStorage.getItem('token');
 
   useEffect(() => {
     fetchNotes();
@@ -137,7 +136,7 @@ function Dashboard({ user, onLogout }) {
       });
 
       if (response.ok) {
-        // Update user data in localStorage
+        // Update user data in sessionStorage
         const updatedUser = {
           ...user,
           tenant: {
@@ -145,7 +144,7 @@ function Dashboard({ user, onLogout }) {
             plan: 'pro'
           }
         };
-        localStorage.setItem('user', JSON.stringify(updatedUser));
+        sessionStorage.setItem('user', JSON.stringify(updatedUser));
         
         // Refresh the page to update the UI
         window.location.reload();
@@ -176,7 +175,7 @@ function Dashboard({ user, onLogout }) {
       });
 
       if (response.ok) {
-        // Update user data in localStorage
+        // Update user data in sessionStorage
         const updatedUser = {
           ...user,
           tenant: {
@@ -184,7 +183,7 @@ function Dashboard({ user, onLogout }) {
             plan: 'free'
           }
         };
-        localStorage.setItem('user', JSON.stringify(updatedUser));
+        sessionStorage.setItem('user', JSON.stringify(updatedUser));
         
         // Refresh the page to update the UI
         window.location.reload();

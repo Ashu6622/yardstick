@@ -58,12 +58,12 @@ async function seedData() {
 
     await User.create(users);
 
-    console.log('Seed data created successfully!');
-    console.log('\nTest accounts:');
-    console.log('admin@acme.test (Admin, Acme) - password: password');
-    console.log('user@acme.test (Member, Acme) - password: password');
-    console.log('admin@globex.test (Admin, Globex) - password: password');
-    console.log('user@globex.test (Member, Globex) - password: password');
+    // console.log('Seed data created successfully!');
+    // console.log('\nTest accounts:');
+    // console.log('admin@acme.test (Admin, Acme) - password: password');
+    // console.log('user@acme.test (Member, Acme) - password: password');
+    // console.log('admin@globex.test (Admin, Globex) - password: password');
+    // console.log('user@globex.test (Member, Globex) - password: password');
 
     process.exit(0);
   } catch (error) {

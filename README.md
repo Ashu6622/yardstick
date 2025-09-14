@@ -128,11 +128,11 @@ npm run dev
 ```
 
 ### 5. Access Application
-- Frontend: http://localhost:5173
-- Backend API: http://localhost:5001
+- Frontend: https://yardstick-65fj.vercel.app/
+- Backend API: https://yardstick-delta.vercel.app/
 
 ### 6. Quick Start
-1. Open http://localhost:5173 in browser
+1. Open https://yardstick-65fj.vercel.app/ in browser
 2. Use test accounts from table below
 3. Click any test account button for quick login
 
